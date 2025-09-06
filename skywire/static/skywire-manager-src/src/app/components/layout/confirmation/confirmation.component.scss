@@ -1,0 +1,21 @@
+@import 'variables';
+
+.text-container {
+  word-break: break-word;
+}
+
+.list-container {
+  font-size: 14px;
+  margin: 10px;
+  color: $blue-medium;
+  word-break: break-word;
+}
+
+.buttons {
+  margin-top: 15px;
+  text-align: right;
+
+  app-button {
+    margin-left: 5px;
+  }
+}

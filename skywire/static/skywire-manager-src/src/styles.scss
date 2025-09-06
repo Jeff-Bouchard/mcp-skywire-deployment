@@ -1,0 +1,214 @@
+// Bootstrap required
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/mixins";
+
+@import "assets/scss/variables";
+@import "assets/scss/utilities/utilities";
+
+@import "assets/scss/fonts";
+@import "assets/scss/text";
+@import "assets/scss/icons";
+@import "assets/scss/menu";
+@import "assets/scss/responsive_tables";
+@import "assets/scss/forms";
+@import "assets/scss/backgrounds";
+@import "assets/scss/dialogs";
+@import "assets/scss/vpn_client";
+@import '@angular/material/theming';
+
+/***************************
+* Bootsrap 4
+****************************/
+
+// Skywire boostrap overrides
+@import "assets/scss/bootstrap_overrides";
+
+// Bootstrap required
+@import "bootstrap/scss/variables";
+
+// Bootstrap optional
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/utilities/sizing";
+@import "bootstrap/scss/utilities/align";
+@import "bootstrap/scss/utilities/text";
+@import "bootstrap/scss/utilities/borders";
+@import "bootstrap/scss/utilities/float";
+@import "bootstrap/scss/utilities/spacing";
+@import "bootstrap/scss/navbar";
+
+
+/***************************
+* Skywire
+****************************/
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  font-family: $skywire-font-family;
+  margin:0;
+  color: theme-color(white) !important;
+  font-size: $font-size-base;
+  backface-visibility: hidden
+}
+
+button:focus {
+  outline: 0;
+}
+
+.mat-mdc-button {
+  min-width: 40px !important;
+  padding: 0 16px !important;
+
+  .mat-icon {
+    height: auto !important;
+    width: auto !important;
+  }
+}
+
+.mdc-snackbar__surface {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.mat-mdc-form-field-infix {
+  display: flex;
+}
+
+.mdc-text-field--filled {
+  background-color: transparent !important;
+  padding: 0 !important;
+
+  .mat-mdc-form-field-focus-overlay {
+    opacity: 0 !important;
+  }
+
+  .mat-mdc-form-field-infix {
+    padding: 0 !important;
+    min-height: 45px !important;
+
+    .field-container {
+      width: 100%;
+      
+      .field-label {
+        margin: 0px;
+        font-size: $font-size-mini;
+        margin-bottom: 5px;
+        opacity: 0.55;
+      }
+    }
+
+    .mat-mdc-form-field-input-control {
+      font-family: $skywire-font-family !important;
+      font-size: $font-size-sm !important;
+    }
+  }
+}
+
+.mat-mdc-form-field-bottom-align {
+  margin-bottom: 15px;
+}
+
+.mat-mdc-form-field-bottom-align::before {
+  display: none !important;
+}
+
+.mat-mdc-form-field-error-wrapper {
+  padding: 0px !important;
+  position: inherit !important;
+  line-height: 1.2;
+  margin-top: 3px;
+}
+
+.mat-mdc-select {
+  display: flex !important;
+  font-family: $skywire-font-family !important;
+  font-size: $font-size-sm !important;
+
+  .mat-mdc-select-value {
+    line-height: 1.5;
+  }
+}
+
+.grey-button-background:hover {
+  background-color: rgba(0,0,0,0.05) !important;
+}
+
+.flex-1
+{
+  flex: 1;
+}
+
+.mat-mdc-snack-bar-container {
+  max-width: 90vw !important;
+}
+
+.transparent-50 {
+  opacity: 0.5;
+}
+
+.flag-container {
+  width: 16px;
+  height: 11px;
+  display: inline-block;
+  margin-right: 5px;
+  background-image: url('/assets/img/flags/unknown.png');
+
+  div {
+    width: 16px;
+    height: 11px;
+  }
+}
+
+.help-icon {
+  opacity: 0.4;
+  font-size: 14px;
+  cursor: default;
+  position: relative;
+  top: 1px;
+}
+
+.blinking {
+  animation: alert-blinking 1s linear infinite;
+}
+
+@keyframes alert-blinking {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.snackbar-container {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.mdc-tooltip__surface {
+  font-size: 11px !important;
+  line-height: 1.8;
+  padding: 7px 14px !important;
+}
+
+.mat-mdc-tooltip-panel {
+  pointer-events: none !important;
+}
+
+.tooltip-word-break {
+  word-break: break-word;
+}
+
+.mat-mdc-button-touch-target {
+  height: 100% !important;
+}
+
+.mat-mdc-button:not(:disabled) {
+  color: $black;
+}
+
+.mat-accent {
+  .mdc-button__label {
+    color: white !important;
+  }
+}

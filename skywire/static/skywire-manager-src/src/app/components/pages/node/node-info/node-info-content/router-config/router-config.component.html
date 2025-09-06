@@ -1,0 +1,28 @@
+<app-dialog [headline]="'router-config.title' | translate" [dialog]="dialogRef" [disableDismiss]="disableDismiss">
+  <!-- TODO: add help text. -->
+  <div class="info-container">{{'router-config.info' | translate}}</div>
+  <form [formGroup]="form" [ngClass]="{'element-disabled' : disableDismiss}">
+    <mat-form-field>
+      <div class="field-container">
+        <label class="field-label" for="remoteKey">{{ 'router-config.min-hops' | translate }}</label>
+        <input
+          #firstInput
+          formControlName="min"
+          maxlength="3"
+          matInput
+        >
+      </div>
+      <mat-error>
+        <span>{{ 'router-config.min-hops-error' | translate }}</span>
+      </mat-error>
+    </mat-form-field>
+  </form>
+  <app-button
+    #button class="float-right"
+    color="primary"
+    (action)="save()"
+    [disabled]="!form.valid"
+  >
+    {{ 'router-config.save-config-button' | translate }}
+  </app-button>
+</app-dialog>

@@ -1,0 +1,14 @@
+@import "variables";
+
+.mat-mdc-dialog-content {
+  padding: 0;
+  margin-bottom: -$mat-dialog-padding;
+  background: black;
+  height: 100000px;
+}
+
+.wrapper {
+  div {
+    word-break: break-all;
+  }
+}

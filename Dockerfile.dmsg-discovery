@@ -1,0 +1,15 @@
+# Stage 1: Build the binary
+FROM golang:1.16 AS builder
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN go build -o dmsg-discovery ./cmd/dmsg-discovery
+
+# Stage 2: Create a minimal image with the binary
+FROM debian:bullseye-slim
+ENV REDIS_URL=redis://localhost:6379
+WORKDIR /app
+COPY --from=builder /app/dmsg-discovery /app/dmsg-discovery
+EXPOSE 9090
+CMD ["./dmsg-discovery", "--addr", ":9090", "--redis", "redis://localhost:6379", "--sk", "$(tail -n1 dmsgd-config.json)"]

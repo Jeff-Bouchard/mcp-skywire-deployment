@@ -1,0 +1,320 @@
+# github.com/AudriusButkevicius/pfilter v0.0.0-20210515103320-4b4b86609d51
+## explicit; go 1.15
+github.com/AudriusButkevicius/pfilter
+# github.com/VictoriaMetrics/metrics v1.18.1
+## explicit; go 1.12
+github.com/VictoriaMetrics/metrics
+# github.com/ccding/go-stun/stun v0.0.0-20200514191101-4dc67bcdb029
+## explicit; go 1.14
+github.com/ccding/go-stun/stun
+# github.com/cespare/xxhash/v2 v2.1.2
+## explicit; go 1.11
+github.com/cespare/xxhash/v2
+# github.com/davecgh/go-spew v1.1.1
+## explicit
+github.com/davecgh/go-spew/spew
+# github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f
+## explicit
+github.com/dgryski/go-rendezvous
+# github.com/go-chi/chi v4.1.2+incompatible
+## explicit
+github.com/go-chi/chi
+github.com/go-chi/chi/middleware
+# github.com/go-chi/chi/v5 v5.0.8-0.20220103230436-7dbe9a0bd10f
+## explicit; go 1.14
+github.com/go-chi/chi/v5
+github.com/go-chi/chi/v5/middleware
+# github.com/go-chi/cors v1.1.1
+## explicit
+github.com/go-chi/cors
+# github.com/go-redis/redis v6.15.9+incompatible
+## explicit
+github.com/go-redis/redis
+github.com/go-redis/redis/internal
+github.com/go-redis/redis/internal/consistenthash
+github.com/go-redis/redis/internal/hashtag
+github.com/go-redis/redis/internal/pool
+github.com/go-redis/redis/internal/proto
+github.com/go-redis/redis/internal/util
+# github.com/go-redis/redis/v8 v8.11.5
+## explicit; go 1.17
+github.com/go-redis/redis/v8
+github.com/go-redis/redis/v8/internal
+github.com/go-redis/redis/v8/internal/hashtag
+github.com/go-redis/redis/v8/internal/hscan
+github.com/go-redis/redis/v8/internal/pool
+github.com/go-redis/redis/v8/internal/proto
+github.com/go-redis/redis/v8/internal/rand
+github.com/go-redis/redis/v8/internal/util
+# github.com/gocarina/gocsv v0.0.0-20220927221512-ad3251f9fa25
+## explicit; go 1.13
+github.com/gocarina/gocsv
+# github.com/google/uuid v1.1.2
+## explicit
+github.com/google/uuid
+# github.com/inconshreveable/mousetrap v1.0.0
+## explicit
+github.com/inconshreveable/mousetrap
+# github.com/jackc/chunkreader/v2 v2.0.1
+## explicit; go 1.12
+github.com/jackc/chunkreader/v2
+# github.com/jackc/pgconn v1.12.1
+## explicit; go 1.12
+github.com/jackc/pgconn
+github.com/jackc/pgconn/internal/ctxwatch
+github.com/jackc/pgconn/stmtcache
+# github.com/jackc/pgio v1.0.0
+## explicit; go 1.12
+github.com/jackc/pgio
+# github.com/jackc/pgpassfile v1.0.0
+## explicit; go 1.12
+github.com/jackc/pgpassfile
+# github.com/jackc/pgproto3/v2 v2.3.0
+## explicit; go 1.12
+github.com/jackc/pgproto3/v2
+# github.com/jackc/pgservicefile v0.0.0-20200714003250-2b9c44734f2b
+## explicit; go 1.14
+github.com/jackc/pgservicefile
+# github.com/jackc/pgtype v1.11.0
+## explicit; go 1.13
+github.com/jackc/pgtype
+# github.com/jackc/pgx/v4 v4.16.1
+## explicit; go 1.13
+github.com/jackc/pgx/v4
+github.com/jackc/pgx/v4/internal/sanitize
+github.com/jackc/pgx/v4/stdlib
+# github.com/jinzhu/inflection v1.0.0
+## explicit
+github.com/jinzhu/inflection
+# github.com/jinzhu/now v1.1.5
+## explicit; go 1.12
+github.com/jinzhu/now
+# github.com/json-iterator/go v1.1.12
+## explicit; go 1.12
+github.com/json-iterator/go
+# github.com/klauspost/cpuid v1.2.4
+## explicit
+github.com/klauspost/cpuid
+# github.com/klauspost/reedsolomon v1.9.9
+## explicit; go 1.14
+github.com/klauspost/reedsolomon
+# github.com/lib/pq v1.10.7
+## explicit; go 1.13
+github.com/lib/pq
+github.com/lib/pq/oid
+github.com/lib/pq/scram
+# github.com/mattn/go-colorable v0.1.12
+## explicit; go 1.13
+github.com/mattn/go-colorable
+# github.com/mattn/go-isatty v0.0.14
+## explicit; go 1.12
+github.com/mattn/go-isatty
+# github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
+## explicit
+github.com/mgutz/ansi
+# github.com/mmcloughlin/avo v0.0.0-20200523190732-4439b6b2c061
+## explicit; go 1.11
+github.com/mmcloughlin/avo/attr
+github.com/mmcloughlin/avo/build
+github.com/mmcloughlin/avo/buildtags
+github.com/mmcloughlin/avo/gotypes
+github.com/mmcloughlin/avo/internal/prnt
+github.com/mmcloughlin/avo/internal/stack
+github.com/mmcloughlin/avo/ir
+github.com/mmcloughlin/avo/operand
+github.com/mmcloughlin/avo/pass
+github.com/mmcloughlin/avo/printer
+github.com/mmcloughlin/avo/reg
+github.com/mmcloughlin/avo/src
+github.com/mmcloughlin/avo/x86
+# github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+## explicit
+github.com/modern-go/concurrent
+# github.com/modern-go/reflect2 v1.0.2
+## explicit; go 1.12
+github.com/modern-go/reflect2
+# github.com/pires/go-proxyproto v0.6.2
+## explicit; go 1.13
+github.com/pires/go-proxyproto
+# github.com/pkg/errors v0.9.1
+## explicit
+github.com/pkg/errors
+# github.com/pmezard/go-difflib v1.0.0
+## explicit
+github.com/pmezard/go-difflib/difflib
+# github.com/sirupsen/logrus v1.8.1
+## explicit; go 1.13
+github.com/sirupsen/logrus
+github.com/sirupsen/logrus/hooks/syslog
+# github.com/skycoin/dmsg v1.3.0-rc1.0.20230105101327-c8f2541c3de8
+## explicit; go 1.16
+github.com/skycoin/dmsg/internal/servermetrics
+github.com/skycoin/dmsg/pkg/direct
+github.com/skycoin/dmsg/pkg/disc
+github.com/skycoin/dmsg/pkg/dmsg
+github.com/skycoin/dmsg/pkg/dmsghttp
+github.com/skycoin/dmsg/pkg/ioutil
+github.com/skycoin/dmsg/pkg/noise
+# github.com/skycoin/noise v0.0.0-20180327030543-2492fe189ae6
+## explicit
+github.com/skycoin/noise
+# github.com/skycoin/skycoin v0.27.1
+## explicit
+github.com/skycoin/skycoin/src/cipher
+github.com/skycoin/skycoin/src/cipher/base58
+github.com/skycoin/skycoin/src/cipher/ripemd160
+github.com/skycoin/skycoin/src/cipher/secp256k1-go
+github.com/skycoin/skycoin/src/cipher/secp256k1-go/secp256k1-go2
+github.com/skycoin/skycoin/src/util/logging
+# github.com/skycoin/skywire v1.3.2-0.20230124214138-b3f0bcfb7e77
+## explicit; go 1.18
+github.com/skycoin/skywire/internal/httpauth
+github.com/skycoin/skywire/internal/packetfilter
+github.com/skycoin/skywire/pkg/app/appcommon
+github.com/skycoin/skywire/pkg/app/appevent
+github.com/skycoin/skywire/pkg/routing
+github.com/skycoin/skywire/pkg/servicedisc
+github.com/skycoin/skywire/pkg/skyenv
+github.com/skycoin/skywire/pkg/transport
+github.com/skycoin/skywire/pkg/transport/network
+github.com/skycoin/skywire/pkg/transport/network/addrresolver
+github.com/skycoin/skywire/pkg/transport/network/handshake
+github.com/skycoin/skywire/pkg/transport/network/porter
+github.com/skycoin/skywire/pkg/transport/network/stcp
+# github.com/skycoin/skywire-utilities v0.0.0-20230314131305-bdd8e27cbd46
+## explicit; go 1.17
+github.com/skycoin/skywire-utilities/pkg/buildinfo
+github.com/skycoin/skywire-utilities/pkg/cipher
+github.com/skycoin/skywire-utilities/pkg/cmdutil
+github.com/skycoin/skywire-utilities/pkg/geo
+github.com/skycoin/skywire-utilities/pkg/httpauth
+github.com/skycoin/skywire-utilities/pkg/httputil
+github.com/skycoin/skywire-utilities/pkg/logging
+github.com/skycoin/skywire-utilities/pkg/metricsutil
+github.com/skycoin/skywire-utilities/pkg/netutil
+github.com/skycoin/skywire-utilities/pkg/networkmonitor
+github.com/skycoin/skywire-utilities/pkg/skyenv
+github.com/skycoin/skywire-utilities/pkg/storeconfig
+github.com/skycoin/skywire-utilities/pkg/tcpproxy
+# github.com/skycoin/yamux v0.0.0-20200803175205-571ceb89da9f
+## explicit; go 1.13
+github.com/skycoin/yamux
+# github.com/spf13/cobra v1.4.0
+## explicit; go 1.15
+github.com/spf13/cobra
+# github.com/spf13/pflag v1.0.5
+## explicit; go 1.12
+github.com/spf13/pflag
+# github.com/stretchr/objx v0.4.0
+## explicit; go 1.12
+github.com/stretchr/objx
+# github.com/stretchr/testify v1.8.0
+## explicit; go 1.13
+github.com/stretchr/testify/assert
+github.com/stretchr/testify/mock
+github.com/stretchr/testify/require
+# github.com/templexxx/cpufeat v0.0.0-20180724012125-cef66df7f161
+## explicit
+github.com/templexxx/cpufeat
+# github.com/templexxx/xor v0.0.0-20191217153810-f85b25db303b
+## explicit
+github.com/templexxx/xor
+# github.com/tjfoc/gmsm v1.4.0
+## explicit; go 1.14
+github.com/tjfoc/gmsm/sm4
+# github.com/valyala/fastrand v1.1.0
+## explicit
+github.com/valyala/fastrand
+# github.com/valyala/histogram v1.2.0
+## explicit; go 1.12
+github.com/valyala/histogram
+# github.com/xtaci/kcp-go v5.4.20+incompatible
+## explicit
+github.com/xtaci/kcp-go
+# go.etcd.io/bbolt v1.3.6
+## explicit; go 1.12
+go.etcd.io/bbolt
+# golang.org/x/crypto v0.0.0-20210921155107-089bfa567519
+## explicit; go 1.17
+golang.org/x/crypto/blake2b
+golang.org/x/crypto/blake2s
+golang.org/x/crypto/blowfish
+golang.org/x/crypto/cast5
+golang.org/x/crypto/chacha20
+golang.org/x/crypto/chacha20poly1305
+golang.org/x/crypto/curve25519
+golang.org/x/crypto/curve25519/internal/field
+golang.org/x/crypto/internal/poly1305
+golang.org/x/crypto/internal/subtle
+golang.org/x/crypto/pbkdf2
+golang.org/x/crypto/salsa20
+golang.org/x/crypto/salsa20/salsa
+golang.org/x/crypto/ssh/terminal
+golang.org/x/crypto/tea
+golang.org/x/crypto/twofish
+golang.org/x/crypto/xtea
+# golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4
+## explicit; go 1.17
+golang.org/x/mod/semver
+# golang.org/x/net v0.0.0-20211020060615-d418f374d309
+## explicit; go 1.17
+golang.org/x/net/bpf
+golang.org/x/net/internal/iana
+golang.org/x/net/internal/socket
+golang.org/x/net/ipv4
+golang.org/x/net/ipv6
+# golang.org/x/sys v0.0.0-20220704084225-05e143d24a9e
+## explicit; go 1.17
+golang.org/x/sys/cpu
+golang.org/x/sys/execabs
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/plan9
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+# golang.org/x/term v0.0.0-20210927222741-03fcf44c2211
+## explicit; go 1.17
+golang.org/x/term
+# golang.org/x/text v0.3.7
+## explicit; go 1.17
+golang.org/x/text/cases
+golang.org/x/text/internal
+golang.org/x/text/internal/language
+golang.org/x/text/internal/language/compact
+golang.org/x/text/internal/tag
+golang.org/x/text/language
+golang.org/x/text/runes
+golang.org/x/text/secure/bidirule
+golang.org/x/text/secure/precis
+golang.org/x/text/transform
+golang.org/x/text/unicode/bidi
+golang.org/x/text/unicode/norm
+golang.org/x/text/width
+# golang.org/x/tools v0.1.11
+## explicit; go 1.17
+golang.org/x/tools/go/gcexportdata
+golang.org/x/tools/go/internal/gcimporter
+golang.org/x/tools/go/internal/packagesdriver
+golang.org/x/tools/go/packages
+golang.org/x/tools/internal/event
+golang.org/x/tools/internal/event/core
+golang.org/x/tools/internal/event/keys
+golang.org/x/tools/internal/event/label
+golang.org/x/tools/internal/gocommand
+golang.org/x/tools/internal/packagesinternal
+golang.org/x/tools/internal/typeparams
+golang.org/x/tools/internal/typesinternal
+# gopkg.in/yaml.v3 v3.0.1
+## explicit
+gopkg.in/yaml.v3
+# gorm.io/driver/postgres v1.3.8
+## explicit; go 1.14
+gorm.io/driver/postgres
+# gorm.io/gorm v1.23.8
+## explicit; go 1.14
+gorm.io/gorm
+gorm.io/gorm/callbacks
+gorm.io/gorm/clause
+gorm.io/gorm/logger
+gorm.io/gorm/migrator
+gorm.io/gorm/schema
+gorm.io/gorm/utils

@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()"><mat-icon>menu</mat-icon></button>
+  </div>
+  <div>
+    <span class="title">{{'COMMON.APP_TITLE' | translate}}</span>
+  </div>
+  <div class="spacer"></div>
+  <mat-menu #userMenu="matMenu">
+    <button
+      routerLink="/account-info"
+      mat-menu-item
+    >
+      {{'HEADER.ACCOUNT_INFO' | translate}}
+    </button>
+  </mat-menu>
+</mat-toolbar>

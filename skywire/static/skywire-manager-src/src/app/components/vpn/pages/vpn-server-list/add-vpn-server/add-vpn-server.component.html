@@ -1,0 +1,70 @@
+<app-dialog [headline]="'vpn.server-list.add-server-dialog.title' | translate" [dialog]="dialogRef">
+  <form [formGroup]="form">
+    <!-- Public key. -->
+    <mat-form-field>
+      <div class="field-container">
+        <label class="field-label" for="remoteKey">{{ 'vpn.server-list.add-server-dialog.pk-label' | translate }}</label>
+        <input
+          formControlName="pk"
+          maxlength="66"
+          #firstInput
+          matInput
+        >
+      </div>
+      <mat-error>
+        <ng-container *ngIf="!this.form.get('pk').hasError('pattern');else hexError">
+          <span>{{ 'vpn.server-list.add-server-dialog.pk-length-error' | translate }}</span>
+        </ng-container>
+      </mat-error>
+      <ng-template #hexError>
+        <span>{{ 'vpn.server-list.add-server-dialog.pk-chars-error' | translate }}</span>
+      </ng-template>
+    </mat-form-field>
+
+    <!-- Password. -->
+    <mat-form-field>
+      <div class="field-container">
+        <label class="field-label" for="remoteKey">{{ 'vpn.server-list.add-server-dialog.password-label' | translate }}</label>
+        <input
+          formControlName="password"
+          type="password"
+          matInput
+        >
+      </div>
+    </mat-form-field>
+
+    <!-- Name. -->
+    <mat-form-field>
+      <div class="field-container">
+        <label class="field-label" for="remoteKey">{{ 'vpn.server-list.add-server-dialog.name-label' | translate }}</label>
+        <input
+          formControlName="name"
+          maxlength="100"
+          matInput
+        >
+      </div>
+    </mat-form-field>
+
+    <!-- Note. -->
+    <mat-form-field>
+      <div class="field-container">
+        <label class="field-label" for="remoteKey">{{ 'vpn.server-list.add-server-dialog.note-label' | translate }}</label>
+        <input
+          formControlName="note"
+          maxlength="100"
+          matInput
+        >
+      </div>
+    </mat-form-field>
+  </form>
+
+  <!-- Button. -->
+  <app-button
+    (action)="process()"
+    [disabled]="!form.valid"
+    color="primary"
+    class="float-right"
+  >
+    {{ 'vpn.server-list.add-server-dialog.use-server-button' | translate }}
+  </app-button>
+</app-dialog>

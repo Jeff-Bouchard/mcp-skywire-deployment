@@ -1,0 +1,15 @@
+# Stage 1: Build the binary
+FROM golang:1.16 AS builder
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN go build -o route-finder ./cmd/route-finder
+
+# Stage 2: Create a minimal image with the binary
+FROM debian:bullseye-slim
+ENV PG_USER=postgres PG_DATABASE=rf PG_PASSWORD=
+WORKDIR /app
+COPY --from=builder /app/route-finder /app/route-finder
+EXPOSE 9092
+CMD ["./route-finder", "--addr", ":9092", "--dmsg-disc", "http://127.0.0.1:9090", "--sk", "$(tail -n1 rf-config.json)"]

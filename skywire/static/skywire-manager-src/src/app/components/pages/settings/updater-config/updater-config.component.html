@@ -1,0 +1,56 @@
+<div class="rounded-elevated-box"><div class="box-internal-container overflow">
+  <!-- Help icon. -->
+  <div class="white-form-help-icon-container">
+    <mat-icon class="help-icon" [inline]="true" [matTooltip]="'settings.updater-config.help' | translate">
+      help
+    </mat-icon>
+  </div>
+  <!-- Form. -->
+  <form [formGroup]="form">
+    <mat-form-field class="white-form-field">
+      <div class="field-container">
+        <label class="field-label" for="remoteKey">{{ 'settings.updater-config.channel' | translate }}</label>
+        <input formControlName="channel" maxlength="255" matInput>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field class="white-form-field">
+      <div class="field-container">
+        <label class="field-label" for="remoteKey">{{ 'settings.updater-config.version' | translate }}</label>
+        <input formControlName="version" maxlength="255" matInput>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field class="white-form-field">
+      <div class="field-container">
+        <label class="field-label" for="remoteKey">{{ 'settings.updater-config.archive-url' | translate }}</label>
+        <input formControlName="archiveURL" maxlength="255" matInput>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field class="white-form-field">
+      <div class="field-container">
+        <label class="field-label" for="remoteKey">{{ 'settings.updater-config.checksum-url' | translate }}</label>
+        <input formControlName="checksumsURL" maxlength="255" matInput>
+      </div>
+    </mat-form-field>
+
+    <div class="mt-2 buttons-area">
+      <!-- Alert shown when there are unsaved changes. -->
+      <div class="text-area red-clear-text">
+        <span *ngIf="dataChanged">
+          <mat-icon [inline]="true">warning</mat-icon>
+          {{ 'settings.updater-config.not-saved' | translate }}
+        </span>
+      </div>
+
+      <!-- Buttons. -->
+      <app-button class="app-button left-button" color="primary" (action)="removeSettings()" [forDarkBackground]="true" [disabled]="!hasCustomSettings">
+        {{ 'settings.updater-config.remove-settings' | translate }}
+      </app-button>
+      <app-button class="app-button" color="primary" (action)="saveSettings()" [forDarkBackground]="true" [disabled]="!dataChanged">
+        {{ 'settings.updater-config.save' | translate }}
+      </app-button>
+    </div>
+  </form>
+</div></div>

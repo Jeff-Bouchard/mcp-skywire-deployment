@@ -1,0 +1,331 @@
+@use 'sass:math';
+
+@import 'variables';
+@import "bootstrap/scss/functions";
+@import "bootstrap_overrides";
+
+$top-bar-height: 56px;
+
+.normal-height {
+  @media (max-width: (map-get($grid-breakpoints, lg) - 1)) {
+    height: 55px !important;
+  }
+}
+
+.main-container {
+  border-bottom: 1px solid $separator;
+  padding-bottom: 10px;
+  margin-bottom: -5px;
+  height: 100px;
+  display: flex;
+
+  .main-area {
+    flex-grow: 1;
+  }
+
+  .title {
+    font-size: $font-size-sm;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    flex-direction: row;
+    align-items: center;
+
+    .title-text {
+      z-index: 1;
+    }
+
+    .title-image {
+      width: 124px;
+      height: 21px;
+    }
+
+    .return-container {
+      width: 30px;
+      position: relative;
+      top: 2px;
+
+      .return-button {
+        line-height: 1;
+        font-size: 25px;
+        position: relative;
+        top: 2px;
+        width: 100%;
+        margin-right: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .lower-container {
+    display: flex;
+
+    .blank-space {
+      flex-grow: 1;
+    }
+
+    .tab-button {
+      color: $white;
+      border-radius: $mat-dialog-radius;
+      opacity: 0.5;
+      margin-right: 2px;
+      text-decoration: none;
+      height: $header-buttons-height;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        opacity: 0.75;
+      }
+
+      &[disabled] {
+        opacity: 1 !important;
+        color: $white;
+        background: $dark-background !important;
+      }
+    
+      .mat-icon {
+        margin-right: 2px;
+        opacity: 0.75;
+        font-size: 18px;
+      }
+    
+      span {
+        font-size: $font-size-base;
+        margin: 0 4px;
+        position: relative;
+        top: -1px;
+      }
+    }
+
+    .select-tab-button {
+      opacity: 0.75 !important;
+
+      &:hover {
+        opacity: 1 !important;
+      }
+    }
+
+    .right-container {
+      display: flex;
+      align-items: center;
+
+      app-refresh-button {
+        align-self: flex-end;
+      }
+
+      .menu-button {
+        height: 32px;
+        width: 32px;
+        min-width: 0px !important;
+        background-color: $white;
+        border-radius: 100%;
+        padding: 0 !important;
+        line-height: normal;
+        color: #929292;
+        font-size: 20px;
+
+        .icon-container {
+          display: flex;
+          place-content: center;
+        }
+      }
+    }
+  }
+}
+
+.menu-separator {
+  width: 100%;
+  height: 1px;
+  background-color: $grey-separator;
+}
+
+.flag {
+  width: 24px;
+  margin-right: 16px;
+}
+
+.transparent {
+  opacity: 0.5;
+}
+
+.top-bar {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: $top-bar-height;
+  background-color: $white;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: $black;
+  display: flex;
+
+  .logo-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: math.div($top-bar-height, 2);
+    }
+  }
+
+  .button-container {
+    flex-shrink: 0;
+    width: $top-bar-height;
+
+    button {
+      width: $top-bar-height;
+      height: $top-bar-height;
+    }
+  }
+}
+
+.top-bar-margin {
+  margin-top: $top-bar-height;
+  flex-shrink: 0;
+}
+
+.vpn-info {
+  font-size: $font-size-mini;
+  background: $dark-background;
+  padding: 15px 20px;
+  align-self: center;
+
+  table {
+    tr {
+      .state-td {
+        font-weight: bold;
+      }
+
+      td {
+        padding: 2px 0;
+        min-width: 90px;
+
+        mat-icon {
+          margin-right: 3px;
+          font-size: 12px;
+          position: relative;
+          top: 1px;
+          user-select: none;
+          width: auto;
+          line-height: 1;
+        }
+
+        .state-icon {
+          transform: scale(0.75);
+        }
+
+        .aminated-state-icon-container {
+          width: 0px;
+          height: 0px;
+
+          .state-icon {
+            height: auto;
+            animation: state-icon-animation 1s linear 1;
+          }
+
+          @keyframes state-icon-animation {
+            0% {
+              transform: perspective(1px) scale(1);
+              opacity: 0.8;
+            }
+            100% {
+              transform: scale(2);
+              opacity: 0;
+            }
+          }
+        }
+
+        .animation-container {
+          width: 0px;
+          height: 0px;
+
+          .internal-animation-container {
+            width: 200px;
+
+            .animation-area {
+              display: inline-block;
+              animation: state-animation 1s linear 1;
+              opacity: 0;
+
+              @keyframes state-animation {
+                0% {
+                  transform: scale(1);
+                  opacity: 1;
+                }
+                100% {
+                  transform: scale(2.5);
+                  opacity: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      td:first-of-type {
+        padding-right: 30px;
+      }
+    }
+  }
+
+  mat-spinner ::ng-deep circle {
+    stroke: $white;
+  }
+}
+
+.top-text-vpn-container {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: $font-size-mini-plus;
+
+  .connection-error-msg-vpn {
+    margin: -5px 5px 5px 10px;
+    color: $yellow-clear;
+  }
+
+  .elements-separator {
+    flex-grow: 1;
+  }
+
+  .languaje-button-vpn {
+    margin: -5px 10px 5px 0px;
+
+    .text-container {
+      cursor: pointer;
+      display: inline;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      .language-flag {
+        width: 11px;
+        height: 11px;
+        margin-right: 2px;
+      }
+    }
+  }
+}
+
+.remote-vpn-alert-container {
+  background-color: $red;
+  margin: 0 -21px;
+  padding: 10px 20px 15px;
+  text-align: center;
+
+  mat-icon {
+    font-size: 14px;
+  }
+
+  .top-line {
+    font-size: $font-size-lg;
+  }
+
+  .bottom-line {
+    font-size: $font-size-smaller;
+  }
+}

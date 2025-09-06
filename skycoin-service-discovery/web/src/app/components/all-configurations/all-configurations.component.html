@@ -1,0 +1,116 @@
+<div class="card">
+  <div class="header">
+    <div class="title">{{ 'HEADER.ALL_CONFIGURATIONS' | translate }}</div>
+
+    <button mat-icon-button color="primary" [matMenuTriggerFor]="filterTransactions">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+  </div>
+
+
+  <div class="body datatable">
+    <div class="responsive-table">
+      <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <ng-container matColumnDef="keyPort">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>{{'PROXY.KEY' | translate}} </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.publicKeyPort}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+          <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>{{'PROXY.COUNTRY' | translate}} </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let element">{{element.country}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+          <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>{{'PROXY.CITY' | translate}} </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let element">{{element.city}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>{{'PROXY.TYPE' | translate}} </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let element">{{element.status}} </mat-cell>
+        </ng-container>
+        <!-- actions -->
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>
+          </mat-header-cell>
+
+          <mat-cell *matCellDef="let row; let i=index;" class="actions">
+            <a type="button" mat-icon-button class="icon-btn" color="primary" target="_blank" [routerLink]="['/admin-view-miner']" [queryParams]="{id: row.id}">
+              <!--(click)="startEdit(i, row.id, row.title, row.state, row.url, row.created_at, row.updated_at)"-->
+              <mat-icon aria-label="Edit">edit</mat-icon>
+            </a>
+
+            <button [disabled]="row.disabled" mat-icon-button class="icon-btn" color="primary" (click)="deleteMiner(row.id)">
+              <mat-icon aria-label="Delete">delete</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+      </mat-table>
+    </div>
+
+
+
+
+
+
+  <!--<div class="body datatable">-->
+    <!--<div class="responsive-table">-->
+      <!--<table mat-table #table [dataSource]="dataSource" matSort matSortActive="createdAt" matSortDirection="desc" class="mat-cell">-->
+        <!--<ng-container matColumnDef="keyPort">-->
+          <!--<th mat-header-cell *matHeaderCellDef mat-sort-header>{{'PROXY.KEY' | translate}} </th>-->
+          <!--<td mat-cell *matCellDef="let element">{{element.kke | date:'medium'}} </td>-->
+        <!--</ng-container>-->
+
+        <!--<ng-container matColumnDef="country">-->
+          <!--<th mat-header-cell *matHeaderCellDef mat-sort-header>{{'PROXY.COUNTRY' | translate}} </th>-->
+          <!--<td mat-cell *matCellDef="let element">{{element.updatedAt | date:'medium'}} </td>-->
+        <!--</ng-container>-->
+
+        <!--<ng-container matColumnDef="city">-->
+          <!--<th mat-header-cell *matHeaderCellDef mat-sort-header>{{'PROXY.CITY' | translate}} </th>-->
+          <!--<td mat-cell *matCellDef="let element">{{element.chainType}} </td>-->
+        <!--</ng-container>-->
+
+        <!--<ng-container matColumnDef="status">-->
+          <!--<th mat-header-cell *matHeaderCellDef mat-sort-header>{{'PROXY.TYPE' | translate}} </th>-->
+          <!--<td mat-cell *matCellDef="let element">{{element.chainType}} </td>-->
+        <!--</ng-container>-->
+
+        <!--<mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>-->
+        <!--<mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>-->
+
+        <!--&lt;!&ndash;<tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>&ndash;&gt;-->
+        <!--&lt;!&ndash;<tr mat-row *matRowDef="let element; columns: columnsToDisplay;"&ndash;&gt;-->
+            <!--&lt;!&ndash;class="example-element-row">&ndash;&gt;-->
+        <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+        <!--&lt;!&ndash;<tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>&ndash;&gt;-->
+      <!--</table>-->
+    <!--</div>-->
+
+    <div class="no-results" [style.display]="dataSource.renderedData.length == 0 ? '' : 'none'">
+      {{'TABLE.NO_RESULTS' | translate}}
+    </div>
+
+    <div class="controls right">
+      <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator>
+    </div>
+  </div>
+
+
+  <mat-menu #filterTransactions="matMenu" class="filter-panel">
+    <div (click)="$event.stopPropagation()">
+      <mat-form-field floatPlaceholder="never" color="accent" class="filter">
+        <input matInput #filter placeholder="{{'TABLE.FILTER_CONFIGURATIONS' | translate}}">
+      </mat-form-field>
+    </div>
+  </mat-menu>
+</div>

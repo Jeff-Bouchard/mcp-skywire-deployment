@@ -1,0 +1,37 @@
+<app-dialog class="info-dialog" [headline]="'transports.details.title' | translate" [dialog]="dialogRef">
+  <div>
+    <div class="title mt-0">
+      <mat-icon [inline]="true">list</mat-icon>{{ 'transports.details.basic.title' | translate }}
+    </div>
+    <div class="item">
+      <span>{{ 'transports.details.basic.persistent' | translate }}</span>
+      <ng-container *ngIf="data.isPersistent">
+        {{ 'common.yes' | translate }}
+        <mat-icon [inline]="true" class="help-icon d-none d-md-inline" [matTooltip]="'transports.persistent-transport-tooltip' | translate">help</mat-icon>
+      </ng-container>
+      <ng-container *ngIf="!data.isPersistent">{{ 'common.no' | translate }}</ng-container>
+    </div>
+    <div class="item">
+      <span>{{ 'transports.details.basic.id' | translate }}</span> {{ data.id }}
+    </div>
+    <div class="item">
+      <span>{{ 'transports.details.basic.local-pk' | translate }}</span> {{ data.localPk }}
+    </div>
+    <div class="item">
+      <span>{{ 'transports.details.basic.remote-pk' | translate }}</span> {{ data.remotePk }}
+    </div>
+    <div class="item">
+      <span>{{ 'transports.details.basic.type' | translate }}</span> {{ data.type }}
+    </div>
+
+    <div class="title">
+      <mat-icon [inline]="true">import_export</mat-icon>{{ 'transports.details.data.title' | translate }}
+    </div>
+    <div class="item">
+      <span>{{ 'transports.details.data.uploaded' | translate }}</span> {{ data.sent | autoScale }}
+    </div>
+    <div class="item">
+      <span>{{ 'transports.details.data.downloaded' | translate }}</span> {{ data.recv | autoScale }}
+    </div>
+  </div>
+</app-dialog>

@@ -1,0 +1,68 @@
+@import 'variables';
+@import "bootstrap_overrides";
+@import 'utilities/utilities';
+@import 'text';
+
+:host {
+  color: $black;
+}
+
+.header {
+  margin-top: -$mat-dialog-padding;
+  margin-left: -$mat-dialog-padding;
+  margin-right: -$mat-dialog-padding;
+  margin-bottom: 0;
+  color: $blue-medium;
+  padding: 0px ($mat-dialog-padding - 10) 0px $mat-dialog-padding;
+  font-size: $font-size-base;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  span {
+    @extend .single-line;
+    flex-grow: 1;
+  }
+
+  @media (max-width: (map-get($grid-breakpoints, md) - 1)) {
+    & {
+      padding: 0px 2px 0px $mat-dialog-padding;
+    }
+  }
+
+  span {
+    @extend .reactivate-mouse;
+    line-height: $font-size-base;
+    margin: 18px 0;
+  }
+
+  .mat-mdc-icon-button {
+    @extend .cursor-pointer;
+    color: darken($white, 30%);
+    width: 32px;
+    height: 32px;
+    line-height: 20px;
+    margin-left: 10px;
+    padding: 0;
+
+    @media (max-width: (map-get($grid-breakpoints, md) - 1)) {
+      & {
+        width: 46px;
+        height: 46px;
+      }
+    }
+  }
+}
+
+.header-separator {
+  height: 1px;
+  background-color: $modal-separator;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.content-margin {
+  padding-top: 18px;
+  padding-bottom: $mat-dialog-padding !important;
+}

@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'text';
+
+button {
+  color: $white;
+  border-radius: $mat-dialog-radius;
+  @extend .single-line;
+
+  mat-spinner ::ng-deep circle {
+    stroke: $white;
+  }
+}
+
+mat-icon, mat-spinner {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.for-dark-background:disabled {
+  background-color: #000000 !important;
+  color: white !important;
+  opacity: 0.3;
+}

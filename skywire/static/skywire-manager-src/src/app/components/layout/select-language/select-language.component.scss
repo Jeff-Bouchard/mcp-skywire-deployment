@@ -1,0 +1,61 @@
+@import "bootstrap_overrides";
+@import 'variables';
+@import 'text';
+
+$label-background: rgba(255, 255, 255, 0.25);
+
+.options-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  button {
+    width: 118px;
+    height: auto !important;
+    margin: 20px;
+    font-size: $font-size-mini;
+    line-height: unset;
+    padding: 0 !important;
+    color: unset;
+
+    ::ng-deep .mdc-button__label {
+      width: 100%;
+    }
+
+    @media (max-width: (map-get($grid-breakpoints, md) - 1)) {
+      & {
+        width: 90px;
+        font-size: $font-size-mini-plus;
+        margin: 6px;
+      }
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+      margin: 10px 0px;
+
+      @media (max-width: (map-get($grid-breakpoints, md) - 1)) {
+        & {
+          width: 48px;
+          height: 48px;
+          margin: 7px 0px;
+        }
+      }
+    }
+
+    .label {
+      color: $black !important;
+      background-color: $label-background;
+      padding: 4px 10px;
+      @extend .single-line;
+
+      @media (max-width: (map-get($grid-breakpoints, md) - 1)) {
+        & {
+          padding: 4px 5px;
+        }
+      }
+    }
+  }
+}

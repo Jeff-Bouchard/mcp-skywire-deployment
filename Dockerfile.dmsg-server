@@ -1,0 +1,14 @@
+# Stage 1: Build the binary
+FROM golang:1.16 AS builder
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN go build -o dmsg-server ./cmd/dmsg-server
+
+# Stage 2: Create a minimal image with the binary
+FROM debian:bullseye-slim
+WORKDIR /app
+COPY --from=builder /app/dmsg-server /app/dmsg-server
+EXPOSE 8081 8082
+CMD ["./dmsg-server", "start", "dmsg-config.json"]

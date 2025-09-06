@@ -1,0 +1,19 @@
+on: [pull_request]
+name: Test
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup golang
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.19.x
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Install Requirements
+        run: |
+          sudo apt update
+          make install-tools
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
+      - name: Test
+        run: make check
